@@ -1,0 +1,39 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "g++ build active file (src -> out)",
+      "type": "shell",
+      "command": "${workspaceFolder}/scripts/run_cpp.sh",
+      "args": [
+        "${workspaceFolder}",
+        "${file}",
+        "build"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "problemMatcher": ["$gcc"]
+    },
+    {
+      "label": "Run active file (run from out)",
+      "type": "shell",
+      "command": "${workspaceFolder}/scripts/run_cpp.sh",
+      "args": [
+        "${workspaceFolder}",
+        "${file}",
+        "run"
+      ],
+      "group": "none",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      }
+    }
+  ]
+}
