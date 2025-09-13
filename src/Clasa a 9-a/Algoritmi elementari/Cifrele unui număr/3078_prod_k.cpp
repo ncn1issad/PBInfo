@@ -20,4 +20,5 @@ int main() {
     }
     if (!isValid) p = 0;
     std::cout << p << '\n';
+    return 0;
 }

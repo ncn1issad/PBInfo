@@ -18,4 +18,5 @@ int main() {
     }
     if (cp == -1) cp = 10;
     std::cout << cp << '\n';
+    return 0;
 }
