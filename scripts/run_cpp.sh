@@ -45,14 +45,22 @@ if [ "$ACTION" = "build" ]; then
   echo "Built $OUT_PATH"
   exit $?
 elif [ "$ACTION" = "run" ]; then
+  # Create resources directory structure for the program
+  RESOURCES_DIR="$WORKSPACE_ROOT/resources/$BASENAME"
+  mkdir -p "$RESOURCES_DIR"
+  
   # If binary already exists under out, run it; otherwise build then run
   if [[ -x "$OUT_PATH" ]]; then
+    echo "Running $BASENAME from $RESOURCES_DIR"
+    cd "$RESOURCES_DIR"
     "$OUT_PATH" "${EXTRA_ARGS[@]}" || true
     exit 0
   else
     mkdir -p "$OUT_DIR"
     g++ -std=c++17 -O2 -g "$SRC" -o "$OUT_PATH"
     echo "Built $OUT_PATH"
+    echo "Running $BASENAME from $RESOURCES_DIR"
+    cd "$RESOURCES_DIR"
     "$OUT_PATH" "${EXTRA_ARGS[@]}"
     exit $?
   fi

@@ -21,7 +21,7 @@
       "problemMatcher": ["$gcc"]
     },
     {
-      "label": "Run active file (run from out)",
+      "label": "Build and Run active file",
       "type": "shell",
       "command": "${workspaceFolder}/scripts/run_cpp.sh",
       "args": [
@@ -32,8 +32,24 @@
       "group": "none",
       "presentation": {
         "reveal": "always",
-        "panel": "shared"
+        "panel": "dedicated",
+        "clear": true
       }
+    },
+    {
+      "label": "Prepare for Debug",
+      "type": "shell",
+      "command": "mkdir",
+      "args": [
+        "-p",
+        "${workspaceFolder}/resources/${fileBasenameNoExtension}"
+      ],
+      "group": "none",
+      "presentation": {
+        "reveal": "never",
+        "panel": "shared"
+      },
+      "dependsOn": "g++ build active file (src -> out)"
     }
   ]
 }
