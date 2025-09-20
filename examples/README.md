@@ -11,6 +11,8 @@ How to run (from VS Code):
 
 Contents
 - smallestPrimeDivisor.cpp: Find the smallest prime divisor of a number in O(n^0.5/2) time. Used in problem [PBInfo 4330] (https://www.pbinfo.ro/probleme/4330/).
+- Miller-RabinPrimalityTest_64-bit.cpp: Implements the Miller-Rabin primality test for 64-bit integers.
+- Miller-RabinPrimalityTest_32-bit.cpp: Implements the Miller-Rabin primality test for 32-bit integers. Used in problem [PBInfo 4599] (https://www.pbinfo.ro/probleme/4599/), but only got 80 points (division based approach got same result, issue might not be with the algorithm).
 
 Notes
 - All examples target C++11 and only use the standard libraries.
