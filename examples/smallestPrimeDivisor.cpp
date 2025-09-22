@@ -1,7 +1,6 @@
 // O(n^0.5/2) time complexity
 
 #include <iostream>
-#include <cmath>
 
 /**
  * @brief Returns the smallest prime divisor of a given integer n.
@@ -14,7 +13,7 @@
  */
 int findSmallestPrimeDivisor(long long n) {
     if (n % 2 == 0) return 2;
-    for (long long i = 3; i < std::sqrt(n); i += 2) {
+    for (long long i = 3; i * i < n; i += 2) {
         if (n % i == 0) return i;
     }
     return n;

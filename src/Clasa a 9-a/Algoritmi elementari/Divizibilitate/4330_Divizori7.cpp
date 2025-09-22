@@ -1,4 +1,3 @@
-
 #include <iostream>
 
 int n, divTotal = 0;
